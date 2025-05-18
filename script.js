@@ -2,9 +2,9 @@ const form = document.getElementById("loginForm");
 const message = document.getElementById("message");
 
 const validUsers = [
-  { username: "admin", password: "admin123" },
-  { username: "user1", password: "pass1" },
-  { username: "hmmodz", password: "moddingkuat" }
+  { username: "admin", password: "1" },
+  { username: "user", password: "123" },
+  { username: "ilham", password: "1" }
 ];
 
 let attempts = 3;

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Key Access</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h2>Enter Access Key</h2>
+    <input type="text" id="keyInput" placeholder="Enter your key" />
+    <button onclick="verifyKey()">Login</button>
+    <p id="message"></p>
+  </div>
+
+  <audio id="loginSound" src="login.mp3" preload="auto"></audio>
+
+  <script>
+    const VALID_KEY = "8192-hmmodz"
+    const REDIRECT_URL = "https://hmmodzproject.github.io/cyberhmmodz/"
+
+    function verifyKey() {
+      const key = document.getElementById("keyInput").value;
+      const message = document.getElementById("message");
+      const audio = document.getElementById("loginSound");
+
+      if (key === VALID_KEY) {
+        message.style.color = "#0f0";
+        message.textContent = "Access Granted. Opening Website...";
+        audio.play();
+        setTimeout(() => {
+          window.open(REDIRECT_URL, "_blank");
+        }, 1500);
+      } else {
+        message.style.color = "red";
+        message.textContent = "INVALID KEY - ACCESS DENIED!";
+      }
+    }
+  </script>
+
+</body>
+</html>
